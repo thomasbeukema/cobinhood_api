@@ -4,13 +4,15 @@
 
 This is an API wrapper for Cobinhood written in Python. I made this in my spare time for a trade bot.
 
-Donations:
-BTC: 1Bi1W26FE9gSS3SoY7fPHd1C9fMk8E11z2
-ETH: 0xc406ac84b93bd3fec4801f6dd77aff243cdc574a
-XLM: GA6BIUPHPS476B227MUXDAN5TA32QG6J73XTIZS2CS2D2AWJABCIMZOI
+| Donations: | Address |
+| ---------- | ------- |
+| BTC | 1Bi1W26FE9gSS3SoY7fPHd1C9fMk8E11z2 |
+| ETH | 0xc406ac84b93bd3fec4801f6dd77aff243cdc574a |
+| XLM | GA6BIUPHPS476B227MUXDAN5TA32QG6J73XTIZS2CS2D2AWJABCIMZOI |
 
 # Installation
 __IMPORTANT__
+
 Use Python 3.x for this wrapper.
 
 Just copy the cobinhood file from [here](../cobinhood_api/cobinhood.py) to your project, and then import it like this:
@@ -23,6 +25,7 @@ This page will just give a brief overview of how to use this wrapper. For a more
 you should take a look at [this](https://cobinhood.github.io/api-public/).
 
 __IMPORTANT__
+
 In the examples below, there is a typical response provided. The API will return only the 'result' object if succesful.
 
 ### Errors
@@ -31,7 +34,7 @@ If an error has occured, then the response would look something like this:
 {
     "success": false,
     "error": {
-        "error_code": <string>,
+        "error_code": "some_error",
     }
 }
 ```
@@ -46,7 +49,7 @@ else:
     # You're fine
 ```
 
-For the rest of the documentation we assume the response is succesful with each request.
+For the rest of the documentation we assume the response is successful with each request.
 
 ### Initialise the API
 ```python
@@ -60,7 +63,7 @@ api = Cobinhood_API(<your_api_key>)
 """ Retrieves system time in epoch millis """
 system_time = api.get_system_time()
 ```
-#### Response
+### Response
 
 
 ```JSON
@@ -77,7 +80,7 @@ system_time = api.get_system_time()
 """ Retrieves system info such as system version """
 system_info = api.get_system_info()
 ```
-#### Response
+### Response
 ```JSON
 {
     "success": true,
@@ -97,7 +100,7 @@ system_info = api.get_system_info()
 all_currencies = api.get_all_currencies()
 ```
 
-#### Response
+### Response
 ```JSON
 {
     "success": true,
@@ -110,7 +113,6 @@ all_currencies = api.get_all_currencies()
                 "deposit_fee": "0",
                 "withdrawal_fee": "22.6"
             },
-            ...
         ]
     }
 }
@@ -121,7 +123,7 @@ all_currencies = api.get_all_currencies()
 """ Retrieves all trading pairs supported by Cobinhood """
 all_pairs = api.get_all_trading_pairs()
 ```
-#### Response
+### Response
 ```JSON
 {
     "success": true,
@@ -135,7 +137,6 @@ all_pairs = api.get_all_trading_pairs()
                 "base_max_size": "10000",
                 "quote_increment": "0.1"
             },
-            ...
         ]
     }
 }
@@ -150,7 +151,7 @@ all_pairs = api.get_all_trading_pairs()
 """
 order_book = api.get_order_book('BTC-USD')
 ```
-#### Response
+### Response
 ```JSON
 {
     "success": true,
@@ -158,12 +159,12 @@ order_book = api.get_order_book('BTC-USD')
         "orderbook": {
             "sequence": 1938572,
             "bids": [
-                [ price, count, size ],
-                ...
+                [ "price", "count", "size" ],
+
             ],
             "asks": [
-                [ price, count, size ],
-                ...
+                [ "price", "count", "size" ],
+
             ]
         }
     }
@@ -175,7 +176,7 @@ order_book = api.get_order_book('BTC-USD')
 """ Retrieves trading stats from Cobinhood """
 trading_stats = api.get_trading_stats()
 ```
-#### Response
+### Response
 ```JSON
 {
     "success": true,
@@ -205,13 +206,13 @@ trading_stats = api.get_trading_stats()
 """
 ticker = api.get_ticker('BTC-USD')
 ```
-#### Response
+### Response
 ```JSON
 {
     "success": true,
     "result": {
         "ticker": {
-            "trading_pair_id": "COB-BTC"
+            "trading_pair_id": "COB-BTC",
             "timestamp": 1504459805123,
             "24h_high": "23.456",
             "24h_low": "10.123",
@@ -234,7 +235,7 @@ ticker = api.get_ticker('BTC-USD')
 """
 recent_trades = api.get_recent_trades('COB-BTC')
 ```
-#### Response
+### Response
 ```JSON
 {
     "success": true,
@@ -247,7 +248,7 @@ recent_trades = api.get_recent_trades('COB-BTC')
                 "maker_side": "buy",
                 "timestamp": 1504459805123
             },
-            ...
+
         ]
     }
 }
@@ -262,7 +263,7 @@ recent_trades = api.get_recent_trades('COB-BTC')
 """
 chart_data = api.get_candle_chart('COB-ETH')
 ```
-#### Response
+### Response
 ```JSON
 {
     "success": true,
@@ -276,7 +277,7 @@ chart_data = api.get_candle_chart('COB-ETH')
                 "low": "4378.3",
                 "volume": "23.91460172"
             },
-            ...
+
         ]
     }
 }
@@ -291,7 +292,7 @@ chart_data = api.get_candle_chart('COB-ETH')
 """
 order = api.get_order('37f550a202aa6a3fe120f420637c894c')
 ```
-#### Response
+### Response
 ```JSON
 {
     "success": true,
@@ -320,7 +321,7 @@ order = api.get_order('37f550a202aa6a3fe120f420637c894c')
 """
 trades_in_order = api.get_trades_from_order('37f550a202aa6a3fe120f420637c894c')
 ```
-#### Response
+### Response
 ```JSON
 {
     "success": true,
@@ -330,10 +331,10 @@ trades_in_order = api.get_trades_from_order('37f550a202aa6a3fe120f420637c894c')
                 "id": "09619448e48a3bd73d493a4194f9020b",
                 "price": "10.00000000",
                 "size": "0.01000000",
-                "maker_side": "bid"
+                "maker_side": "bid",
                 "timestamp": 1504459805123
             },
-            ...
+
         ]
     }
 }
@@ -344,7 +345,7 @@ trades_in_order = api.get_trades_from_order('37f550a202aa6a3fe120f420637c894c')
 """ Retrieves all orders """
 orders = api.get_all_orders()
 ```
-#### Response
+### Response
 ```JSON
 {
     "success": true,
@@ -354,10 +355,10 @@ orders = api.get_all_orders()
                 "id": "09619448e48a3bd73d493a4194f9020b",
                 "price": "10.00000000",
                 "size": "0.01000000",
-                "maker_side": "bid"
+                "maker_side": "bid",
                 "timestamp": 1504459805123
             },
-            ...
+
         ]
     }
 }
@@ -379,7 +380,7 @@ orders = api.get_all_orders()
 limit_order  = api.place_order('OMG-ETH', 'bid', 'limit', 200, price=0.0012) # limit order : supply price
 market_order = api.place_order('OMG-ETH', 'bid', 'limit', 200) # market order: don't supply price
 ```
-#### Response
+### Response
 ```JSON
 {
     "success": true,
@@ -393,7 +394,7 @@ market_order = api.place_order('OMG-ETH', 'bid', 'limit', 200) # market order: d
             "price": "5000.01",
             "size": "1.0100",
             "filled": "0.59",
-            "timestamp": 1504459805123
+            "timestamp": 1504459805123,
             "eq_price": "5000.01",
         }
     }
@@ -411,9 +412,9 @@ market_order = api.place_order('OMG-ETH', 'bid', 'limit', 200) # market order: d
 """
 modified_order = api.modify_order('37f550a202aa6a3fe120f420637c894c', 0.0013, 400)
 ```
-#### Response
+### Response
 ```python
-True / False: depending on success
+True / False #depending on success
 ```
 ---
 ### Cancel order
@@ -425,9 +426,9 @@ True / False: depending on success
 """
 canceled_order = api.cancel_order('37f550a202aa6a3fe120f420637c894c')
 ```
-#### Response
+### Response
 ```python
-True / False: depending on succes
+True / False # depending on succes
 ```
 ---
 ### Order history
@@ -435,7 +436,7 @@ True / False: depending on succes
 """ Retrieves order history """
 order_history = api.get_order_history()
 ```
-#### Response
+### Response
 ```JSON
 {
     "success": true,
@@ -450,10 +451,10 @@ order_history = api.get_order_history()
                 "price": "5000.01",
                 "size": "1.0100",
                 "filled": "0.59",
-                "timestamp": 1504459805123
+                "timestamp": 1504459805123,
                 "eq_price": "5000.01",
             },
-            ...
+
         ]
     }
 }
@@ -468,7 +469,7 @@ order_history = api.get_order_history()
 """
 trade = api.get_trade('09619448-e48a-3bd7-3d49-3a4194f9020b')
 ```
-#### Response
+### Response
 ```JSON
 {
     "success": true,
@@ -498,7 +499,7 @@ trade = api.get_trade('09619448-e48a-3bd7-3d49-3a4194f9020b')
 trade_history = api.get_trade_history() # no limit
 trade_history = api.get_trade_history(limit=35) # limit of 35
 ```
-#### Response
+### Response
 ```JSON
 {
     "success": true,
@@ -512,7 +513,7 @@ trade_history = api.get_trade_history(limit=35) # limit of 35
                 "size": "0.01000000",
                 "timestamp": 1504459805123
             },
-            ...
+
         ]
     }
 }
@@ -523,7 +524,7 @@ trade_history = api.get_trade_history(limit=35) # limit of 35
 """ Retrieves all balances in your wallet """
 balances = api.get_balances()
 ```
-#### Response
+### Response
 ```JSON
 {
     "success": true,
@@ -550,7 +551,7 @@ balances = api.get_balances()
                 "on_order": "20",
                 "locked": false
             },
-            ...
+
         ]
     }
 }
@@ -568,7 +569,7 @@ balances = api.get_balances()
 ledger_entries = api.get_ledger_entries() # no parameters
 ledger_entries = api.get_ledger_entries(currency='BTC', limit=10) # both parameters
 ```
-#### Response
+### Response
 ```JSON
 {
     "success": true,
@@ -593,7 +594,7 @@ ledger_entries = api.get_ledger_entries(currency='BTC', limit=10) # both paramet
                 "timestamp": 1504685599302,
             },
             {
-                "action": "withdraw"
+                "action": "withdraw",
                 "type": "exchange",
                 "withdrawal_id": "09619448e48a3bd73d493a4194f9020b",
                 "currency": "BTC",
@@ -601,7 +602,7 @@ ledger_entries = api.get_ledger_entries(currency='BTC', limit=10) # both paramet
                 "balance": "2194.87",
                 "timestamp": 1504685599302,
             },
-            ...
+
         ]
     }
 }
@@ -618,7 +619,7 @@ ledger_entries = api.get_ledger_entries(currency='BTC', limit=10) # both paramet
 deposit_addresses = api.get_deposit_addresses() # no parameters
 deposit_addresses = api.get_deposit_addresses(currency='BTC') # currency specified
 ```
-#### Response
+### Response
 ```JSON
 {
     "success": true,
@@ -630,7 +631,7 @@ deposit_addresses = api.get_deposit_addresses(currency='BTC') # currency specifi
                 "created_at": 1504459805123,
                 "type": "exchange"
             },
-            ...
+
         ]
     }
 }
@@ -647,21 +648,21 @@ deposit_addresses = api.get_deposit_addresses(currency='BTC') # currency specifi
 withdrawal_addresses = api.get_withdrawal_addresses() # no parameters
 withdrawal_addresses = api.get_withdrawal_addresses(currency='BTC') # currency specified
 ```
-#### Response
+### Response
 ```JSON
 {
     "success": true,
     "result": {
         "withdrawal_addresses": [
             {
-                "id": "09619448e48a3bd73d493a4194f9020b"
+                "id": "09619448e48a3bd73d493a4194f9020b",
                 "currency": "BTC",
                 "name": "Kihon's Bitcoin Wallet Address",
-                "type": "exchange"
+                "type": "exchange",
                 "address": "0xbcd7defe48a19f758a1c1a9706e808072391bc20",
                 "created_at": 1504459805123
             },
-            ...
+
         ]
     }
 }
@@ -676,7 +677,7 @@ withdrawal_addresses = api.get_withdrawal_addresses(currency='BTC') # currency s
 """
 withdrawal = api.get_withdrawal('62056df2d4cf8fb9b15c7238b89a1438')
 ```
-#### Response
+### Response
 ```JSON
 {
     "success": true,
@@ -688,7 +689,7 @@ withdrawal = api.get_withdrawal('62056df2d4cf8fb9b15c7238b89a1438')
             "confirmations": 25,
             "required_confirmations": 25,
             "created_at": 1504459805123,
-            "sent_at": 1504459805123
+            "sent_at": 1504459805123,
             "completed_at": 1504459914233,
             "updated_at": 1504459914233,
             "to_address": "0xbcd7defe48a19f758a1c1a9706e808072391bc20",
@@ -714,7 +715,7 @@ withdrawal = api.get_withdrawal('62056df2d4cf8fb9b15c7238b89a1438')
 withdrawals = api.get_all_withdrawals() # no parameters
 withdrawals = api.get_all_withdrawals(currency='BTC', status='pending', limit=1) # all parameters specified
 ```
-#### Response
+### Response
 ```JSON
 {
     "success": true,
@@ -727,7 +728,7 @@ withdrawals = api.get_all_withdrawals(currency='BTC', status='pending', limit=1)
                 "confirmations": 25,
                 "required_confirmations": 25,
                 "created_at": 1504459805123,
-                "sent_at": 1504459805123
+                "sent_at": 1504459805123,
                 "completed_at": 1504459914233,
                 "updated_at": 1504459914233,
                 "to_address": "0xbcd7defe48a19f758a1c1a9706e808072391bc20",
@@ -736,7 +737,7 @@ withdrawals = api.get_all_withdrawals(currency='BTC', status='pending', limit=1)
                 "amount": "0.021",
                 "fee": "0.0003"
             },
-            ...
+
         ]
     }
 }
@@ -751,7 +752,7 @@ withdrawals = api.get_all_withdrawals(currency='BTC', status='pending', limit=1)
 """
 deposit = api.get_deposit('62056df2d4cf8fb9b15c7238b89a1438')
 ```
-#### Response
+### Response
 ```JSON
 {
     "success": true,
@@ -779,7 +780,7 @@ deposit = api.get_deposit('62056df2d4cf8fb9b15c7238b89a1438')
 """ Retrieves all deposits """
 deposits = api.get_all_deposits()
 ```
-#### Response
+### Response
 ```JSON
 {
     "success": true,
@@ -799,7 +800,7 @@ deposits = api.get_all_deposits()
                 "amount": "0.021",
                 "fee": "0.0003"
             },
-            ...
+
         ]
     }
 }

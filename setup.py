@@ -10,4 +10,5 @@ setup(
   download_url = 'https://github.com/thomasbeukema/cobinhood_api/archive/1.0.tar.gz',
   keywords = ['cobinhood', 'api', 'crypto', 'exchange'],
   classifiers = [],
+  python_requires = '>=3'
 )
