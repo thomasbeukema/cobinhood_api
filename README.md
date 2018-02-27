@@ -15,9 +15,14 @@ __IMPORTANT__
 
 Use Python 3.x for this wrapper.
 
-Just copy the cobinhood file from [here](../cobinhood_api/cobinhood.py) to your project, and then import it like this:
+First, use pip to install:
+```shell
+pip install cobinhood_api
+```
+
+Then use it like this:
 ```python
-from cobinhood import Cobinhood_API
+from cobinhood_api import cobinhood
 ```
 
 # Usage
@@ -53,9 +58,9 @@ For the rest of the documentation we assume the response is successful with each
 
 ### Initialise the API
 ```python
-from cobinhood import Cobinhood_API
+from cobinhood_api import cobinhood
 
-api = Cobinhood_API(<your_api_key>)
+api = cobinhood.Cobinhood_API(<your_api_key>)
 ```
 ---
 ### System time
