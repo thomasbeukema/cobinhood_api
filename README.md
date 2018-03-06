@@ -9,6 +9,7 @@ This is an API wrapper for Cobinhood written in Python. I made this in my spare 
 | BTC | 1Bi1W26FE9gSS3SoY7fPHd1C9fMk8E11z2 |
 | ETH | 0xc406ac84b93bd3fec4801f6dd77aff243cdc574a |
 | XLM | GA6BIUPHPS476B227MUXDAN5TA32QG6J73XTIZS2CS2D2AWJABCIMZOI |
+| ETN | etnk5waqRk725J6ybevSQY9BU2ggJuj1Whskypw9e4pZ85Hmcki2dJBfbF31aJZuBn8ZEou6cFuFCW4G2iYnUcze55V27ycAS3 |
 
 # Installation
 __IMPORTANT__
