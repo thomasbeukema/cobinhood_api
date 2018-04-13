@@ -170,7 +170,7 @@ class Cobinhood_API:
         res    = req.json()
 
         if res['success'] == True:
-            return res['result']
+            return res["result"]
         else:
             return res
 
@@ -182,7 +182,7 @@ class Cobinhood_API:
         res    = req.json()
 
         if res['success'] == True:
-            return res['result']
+            return res["result"]
         else:
             return res
 
@@ -194,7 +194,7 @@ class Cobinhood_API:
         res    = req.json()
 
         if res['success'] == True:
-            return res['result']
+            return res["result"]
         else:
             return res
 
@@ -206,7 +206,7 @@ class Cobinhood_API:
         res    = req.json()
 
         if res['success'] == True:
-            return res['result']
+            return res["result"]
         else:
             return res
 
@@ -222,7 +222,7 @@ class Cobinhood_API:
         res    = req.json()
 
         if res['success'] == True:
-            return res['result']
+            return res["result"]
         else:
             return res
 
@@ -234,7 +234,7 @@ class Cobinhood_API:
         res    = req.json()
 
         if res['success'] == True:
-            return res['result']
+            return res["result"]
         else:
             return res
 
@@ -250,7 +250,7 @@ class Cobinhood_API:
         res    = req.json()
 
         if res['success'] == True:
-            return res['result']
+            return res["result"]
         else:
             return res
 
@@ -266,7 +266,7 @@ class Cobinhood_API:
         res    = req.json()
 
         if res['success'] == True:
-            return res['result']
+            return res["result"]
         else:
             return res
 
@@ -282,7 +282,7 @@ class Cobinhood_API:
         res    = req.json()
 
         if res['success'] == True:
-            return res['result']
+            return res["result"]
         else:
             return res
 
@@ -298,7 +298,7 @@ class Cobinhood_API:
         res    = req.json()
 
         if res['success'] == True:
-            return res['result']
+            return res["result"]
         else:
             return res
 
@@ -314,7 +314,7 @@ class Cobinhood_API:
         res    = req.json()
 
         if res['success'] == True:
-            return res['result']
+            return res["result"]
         else:
             return res
 
@@ -326,7 +326,7 @@ class Cobinhood_API:
         res    = req.json()
 
         if res['success'] == True:
-            return res['result']
+            return res["result"]
         else:
             return res
 
@@ -370,7 +370,7 @@ class Cobinhood_API:
         res    = req.json()
 
         if res['success'] == True:
-            return res['result']
+            return res["result"]
         else:
             return res
 
@@ -422,7 +422,7 @@ class Cobinhood_API:
         res    = req.json()
 
         if res['success'] == True:
-            return res['result']
+            return res["result"]
         else:
             return res
 
@@ -438,7 +438,7 @@ class Cobinhood_API:
         res    = req.json()
 
         if res['success'] == True:
-            return res['result']
+            return res["result"]
         else:
             return res
 
@@ -457,7 +457,7 @@ class Cobinhood_API:
         res    = req.json()
 
         if res['success'] == True:
-            return res['result']
+            return res["result"]
         else:
             return res
 
@@ -469,7 +469,7 @@ class Cobinhood_API:
         res    = req.json()
 
         if res['success'] == True:
-            return res['result']
+            return res["result"]
         else:
             return res
 
@@ -494,7 +494,7 @@ class Cobinhood_API:
         res    = req.json()
 
         if res['success'] == True:
-            return res['result']
+            return res["result"]
         else:
             return res
 
@@ -516,7 +516,7 @@ class Cobinhood_API:
         res = req.json()
 
         if res['success'] == True:
-            return res['result']
+            return res["result"]
         else:
             return res
 
@@ -538,7 +538,7 @@ class Cobinhood_API:
         res = req.json()
 
         if res['success'] == True:
-            return res['result']
+            return res["result"]
         else:
             return res
 
@@ -554,7 +554,7 @@ class Cobinhood_API:
         res    = req.json()
 
         if res['success'] == True:
-            return res['result']
+            return res["result"]
         else:
             return res
 
@@ -587,7 +587,7 @@ class Cobinhood_API:
         res    = req.json()
 
         if res['success'] == True:
-            return res['result']
+            return res["result"]
         else:
             return res
 
@@ -603,7 +603,7 @@ class Cobinhood_API:
         res    = req.json()
 
         if res['success'] == True:
-            return res['result']
+            return res["result"]
         else:
             return res
 
@@ -615,6 +615,6 @@ class Cobinhood_API:
         res    = req.json()
 
         if res['success'] == True:
-            return res['result']
+            return res["result"]
         else:
             return res
