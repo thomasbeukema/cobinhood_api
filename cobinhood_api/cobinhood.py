@@ -390,7 +390,7 @@ class Cobinhood_API:
 
         method = self.private_endpoints['modify_order']['method']
         url    = self.base_url + self.private_endpoints['modify_order']['url'].format(orderId=order)
-        req    = requests.request(method, url, headers=self.get_auth_headers(nonce=True), params=request_params)
+        req    = requests.request(method, url, headers=self.get_auth_headers(nonce=True), json=request_params)
         res    = req.json()
 
         if res['success'] == True:
