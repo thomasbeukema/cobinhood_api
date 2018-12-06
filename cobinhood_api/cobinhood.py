@@ -160,7 +160,7 @@ class Cobinhood_API:
         if not nonce:
             return {"authorization": self.api_key}
         else:
-            return {"authorization": self.api_key, "nonce": str(round(time.time() * 1000))}
+            return {"authorization": self.api_key, "nonce": str(round(time.time() * 1000.0))}
 
     def get_system_time(self):
         """ Retrieves system time in epoch millis """
